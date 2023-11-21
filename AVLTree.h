@@ -39,6 +39,7 @@ private:
     NodePointer root;
 
 public:
+
     int minimum();
 
     int maximum();
@@ -47,7 +48,7 @@ public:
 
     int size();
 
-    int find();
+    int find(int finding_num);
 
     int insert();
 
