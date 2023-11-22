@@ -28,23 +28,22 @@ Created by ÀåÅÂ¾ç on 11/19/23.
 
 int AVLTree::find(int finding_num) {
 	int depth = 0;
-	Node current_Node = root;
+	NodePointer current_node = root;
 
-	while () {
-		if (current_Node == NULL) {
-			return 0;
-		}
-		if (current_Node.key == finding_num) {
+	while (current_node != nullptr) {
+		if (current_node->key == finding_num) {
 			return depth;
 		}
-		else if (current_Node.key > finding_num) {
+		else if (current_node->key > finding_num) {
 			depth += 1;
-			current_Node = current_Node.left;
+			current_node = current_node->left;
 		}
-		else { //current_Node.key < finding_num
+		else { //current_node.key < finding_num
 			depth += 1;
-			current_Node = current_Node.right;
+			current_node = current_node->right;
 		}
 	}
+
+	return 0; //current_node == nullptr;
 }
 	
