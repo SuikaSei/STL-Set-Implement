@@ -48,7 +48,7 @@ public:
 
     int size();
 
-    int find(int finding_num);
+    int find(int key);
 
     int insert();
 
