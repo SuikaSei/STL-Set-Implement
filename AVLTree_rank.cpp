@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Created by ÀåÅÂ¾ç on 11/23/23.
+Created by ìž¥íƒœì–‘ on 11/23/23.
  */
 
 #include "AVLTree.h"
@@ -32,11 +32,11 @@ using namespace std;
 int AVLTree::rank(int key) {
 
 	/*
-	TODO: ÀÌ¹Ì ±¸ÇöÇÑ find ÇÔ¼ö¸¦ È°¿ëÇØº¸·ÁÇßÀ¸³ª, depth¸¦ ÅëÇØ Á¶°ÇÀ» ±¸ºÐÇÑ ÈÄ¿¡
-	rank °ªÀ» ±¸ÇÒ ¶§¿¡ ´Ù½Ã find ÇÔ¼ö¿Í ºñ½ÁÇÑ ÄÚµå¸¦ ´Ù½Ã ÀÛ¼ºÇØ¾ßÇÒ °Í °°¾Æ¼­
-	ÄÚµå¸¦ º¹»çÇØ º¯°æÇØº¸¾Ò´Âµ¥, ´Ù¸¥ ÁÁÀº ¹æ¹ýÀÌ ÀÖÀ» Áö µµ¿òÀÌ ÇÊ¿äÇÕ´Ï´Ù.
-	if ((find(key) == 0) && (root != key)) { // root == keyÀÏ °æ¿ìµµ depth°¡ 0ÀÓ
-		cout << "0" << endl; // key °ªÀÌ ¾øÀ¸¸é depth, rank¸¦ ¹«½ÃÇÏ°í 0¸¸ Ãâ·Â
+	TODO: ì´ë¯¸ êµ¬í˜„í•œ find í•¨ìˆ˜ë¥¼ í™œìš©í•´ë³´ë ¤í–ˆìœ¼ë‚˜, depthë¥¼ í†µí•´ ì¡°ê±´ì„ êµ¬ë¶„í•œ í›„ì—
+	rank ê°’ì„ êµ¬í•  ë•Œì— ë‹¤ì‹œ find í•¨ìˆ˜ì™€ ë¹„ìŠ·í•œ ì½”ë“œë¥¼ ë‹¤ì‹œ ìž‘ì„±í•´ì•¼í•  ê²ƒ ê°™ì•„ì„œ
+	ì½”ë“œë¥¼ ë³µì‚¬í•´ ë³€ê²½í•´ë³´ì•˜ëŠ”ë°, ë‹¤ë¥¸ ì¢‹ì€ ë°©ë²•ì´ ìžˆì„ ì§€ ë„ì›€ì´ í•„ìš”í•©ë‹ˆë‹¤.
+	if ((find(key) == 0) && (root != key)) { // root == keyì¼ ê²½ìš°ë„ depthê°€ 0ìž„
+		cout << "0" << endl; // key ê°’ì´ ì—†ìœ¼ë©´ depth, rankë¥¼ ë¬´ì‹œí•˜ê³  0ë§Œ ì¶œë ¥
 		return 0;
 	}
 	*/
@@ -61,7 +61,7 @@ int AVLTree::rank(int key) {
 		}
 	}
 	
-	cout << "0" << endl; // key °ªÀÌ Æ®¸® ³»¿¡ ¾ø¾î¼­ Àç±Í¹®À» ¹þ¾î³­ °æ¿ì
+	cout << "0" << endl; // key ê°’ì´ íŠ¸ë¦¬ ë‚´ì— ì—†ì–´ì„œ ìž¬ê·€ë¬¸ì„ ë²—ì–´ë‚œ ê²½ìš°
 	return rank;
 }
 
