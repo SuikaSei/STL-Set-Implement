@@ -26,19 +26,19 @@ Created by ÀåÅÂ¾ç on 11/19/23.
 
 #include "AVLTree.h"
 
-int AVLTree::find(int finding_num) {
+int AVLTree::find(int key) {
 	int depth = 0;
 	NodePointer current_node = root;
 
 	while (current_node != nullptr) {
-		if (current_node->key == finding_num) {
+		if (current_node->key == key) {
 			return depth;
 		}
-		else if (current_node->key > finding_num) {
+		else if (current_node->key > key) {
 			depth += 1;
 			current_node = current_node->left;
 		}
-		else { //current_node.key < finding_num
+		else { //current_node.key < key
 			depth += 1;
 			current_node = current_node->right;
 		}
