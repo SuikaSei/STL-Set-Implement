@@ -28,7 +28,7 @@ Created by 손예원, 박준영, 장태양, 주시현 on 11/16/23.
 #define STL_SET_IMPLEMENT_AVLTREE_H
 
 struct Node {
-    int key, height;
+    int key, height, size;
     node *left, right;
 };
 
@@ -48,7 +48,7 @@ public:
 
     int size();
 
-    int find(int key);
+    NodePointer find(int key);
 
     int insert();
 

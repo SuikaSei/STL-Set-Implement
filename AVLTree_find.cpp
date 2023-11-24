@@ -21,18 +21,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Created by 장태양 on 11/19/23.
+Created by 장태양on 11/19/23.
  */
 
 #include "AVLTree.h"
+#include <stdio.h>
 
-int AVLTree::find(int key) {
+NOdePointer AVLTree::find(int key) {
 	int depth = 0;
 	NodePointer current_node = root;
 
 	while (current_node != nullptr) {
 		if (current_node->key == key) {
-			return depth;
+			printf("%d\n, depth");
+			return current_node;
 		}
 		else if (current_node->key > key) {
 			depth += 1;
@@ -44,6 +46,7 @@ int AVLTree::find(int key) {
 		}
 	}
 
-	return 0; //current_node == nullptr;
+	printf("0\n");
+	return nullptr; //current_node == nullptr;
 }
-	
+
