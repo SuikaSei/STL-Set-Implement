@@ -27,12 +27,14 @@ Created by 장태양 on 11/23/23.
 #include "AVLTree.h"
 #include <stdio.h>
 
+//size 함수가 구현되었다는 가정 하에 작성
+
 int AVLTree::rank(int key) {
 	int rank = 0;
 	NodePointer finding_node = find(key);
 
 	if (key <= root.key) {
-		rank = finding_node->left(size) + 1;
+		rank = finding_node->left.size() + 1;
 	}
 	else { // key > root.key
 		rank = root.size() - finding_node->right.size();
