@@ -21,18 +21,35 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Created by ì¥íƒœì–‘ on 11/19/23.
+Created by ÀåÅÂ¾ç on 11/23/23.
  */
 
 #include "AVLTree.h"
+#include <iostream>
 
-int AVLTree::find(int key) {
+using namespace std;
+
+int AVLTree::rank(int key) {
+
+	/*
+	TODO: ÀÌ¹Ì ±¸ÇöÇÑ find ÇÔ¼ö¸¦ È°¿ëÇØº¸·ÁÇßÀ¸³ª, depth¸¦ ÅëÇØ Á¶°ÇÀ» ±¸ºĞÇÑ ÈÄ¿¡
+	rank °ªÀ» ±¸ÇÒ ¶§¿¡ ´Ù½Ã find ÇÔ¼ö¿Í ºñ½ÁÇÑ ÄÚµå¸¦ ´Ù½Ã ÀÛ¼ºÇØ¾ßÇÒ °Í °°¾Æ¼­
+	ÄÚµå¸¦ º¹»çÇØ º¯°æÇØº¸¾Ò´Âµ¥, ´Ù¸¥ ÁÁÀº ¹æ¹ıÀÌ ÀÖÀ» Áö µµ¿òÀÌ ÇÊ¿äÇÕ´Ï´Ù.
+	if ((find(key) == 0) && (root != key)) { // root == keyÀÏ °æ¿ìµµ depth°¡ 0ÀÓ
+		cout << "0" << endl; // key °ªÀÌ ¾øÀ¸¸é depth, rank¸¦ ¹«½ÃÇÏ°í 0¸¸ Ãâ·Â
+		return 0;
+	}
+	*/
+
 	int depth = 0;
+	int rank = 0;
 	NodePointer current_node = root;
 
 	while (current_node != nullptr) {
 		if (current_node->key == key) {
-			return depth;
+			cout << "Depth: " << depth << " ";
+			rank = size(current_node->left) + 1;
+			return rank;
 		}
 		else if (current_node->key > key) {
 			depth += 1;
@@ -44,6 +61,6 @@ int AVLTree::find(int key) {
 		}
 	}
 
-	return 0; //current_node == nullptr;
+	return rank;
 }
-	
+

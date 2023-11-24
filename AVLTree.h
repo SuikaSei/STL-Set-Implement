@@ -52,7 +52,7 @@ public:
 
     int insert();
 
-    int rank();
+    int rank(int key);
 
     int erase()
 };

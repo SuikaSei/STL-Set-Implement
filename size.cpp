@@ -1,4 +1,4 @@
-/*
+﻿/*
 MIT License
 
 Copyright (c) 2023 Inha-Open-Source-Team-BBBig
@@ -21,29 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Created by 장태양 on 11/19/23.
+Created by 손예원 on 11/20/23.
  */
-
+#include <iostream>
 #include "AVLTree.h"
 
-int AVLTree::find(int key) {
-	int depth = 0;
-	NodePointer current_node = root;
-
-	while (current_node != nullptr) {
-		if (current_node->key == key) {
-			return depth;
-		}
-		else if (current_node->key > key) {
-			depth += 1;
-			current_node = current_node->left;
-		}
-		else { //current_node.key < key
-			depth += 1;
-			current_node = current_node->right;
-		}
+int AVLTree::size(Node* root) {
+	int count = 0;
+	if (root != nullptr) {// set이 비어있지 않은 경우
+		count = 1 + size(root->left) + size(root->right);
 	}
-
-	return 0; //current_node == nullptr;
+	std::cout << "Number of nodes: " << count << std::endl;
+	return count;
 }
-	
