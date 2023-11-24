@@ -37,7 +37,7 @@ int AVLTree::rank(int key) {
 		rank = finding_node->left->subtreeSize + 1;
 	}
 	else { // key > root->key
-		rank = root->subtreeSize - finding_node->right.size();
+		rank = root->subtreeSize - finding_node->right->subtreeSize;
 	}
 
 	cout << rank << "\n";
