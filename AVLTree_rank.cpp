@@ -25,21 +25,21 @@ Created by 장태양 on 11/23/23.
  */
 
 #include "AVLTree.h"
-#include <stdio.h>
+#include <iostream>
 
-//size 함수가 구현되었다는 가정 하에 작성
+using namespace std;
 
 int AVLTree::rank(int key) {
 	int rank = 0;
 	NodePointer finding_node = find(key);
 
-	if (key <= root.key) {
-		rank = finding_node->left.size() + 1;
+	if (key <= root->key) {
+		rank = finding_node->left->subtreeSize + 1;
 	}
-	else { // key > root.key
-		rank = root.size() - finding_node->right.size();
+	else { // key > root->key
+		rank = root->subtreeSize - finding_node->right.size();
 	}
 
-	printf("%d\n", rank);
+	cout << rank << "\n";
 	return rank;
 }
