@@ -27,6 +27,8 @@ Created by 장태양on 11/19/23.
 #include "AVLTree.h"
 #include <iostream>
 
+using namespace std;
+
 NOdePointer AVLTree::find(int key) {
 	int depth = 0;
 	NodePointer current_node = root;
@@ -46,7 +48,7 @@ NOdePointer AVLTree::find(int key) {
 		}
 	}
 
-	cout << "0" << "\n";
+	cout << "0\n";
 	return nullptr; //current_node == nullptr;
 }
 	
