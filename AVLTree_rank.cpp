@@ -60,7 +60,8 @@ int AVLTree::rank(int key) {
 			current_node = current_node->right;
 		}
 	}
-
+	
+	cout << "0" << endl; // key 값이 트리 내에 없어서 재귀문을 벗어난 경우
 	return rank;
 }
 
