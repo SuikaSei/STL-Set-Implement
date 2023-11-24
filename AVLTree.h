@@ -48,7 +48,7 @@ public:
 
     int size();
 
-    int find(int key);
+    NodePointer find(int key);
 
     int insert();
 
