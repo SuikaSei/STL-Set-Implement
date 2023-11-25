@@ -39,19 +39,19 @@ void AVLTree::rank(int key) {
     cout << result.second << " " << result.first << '\n';
 }
 
-pair<int, int> rankAndDepth(Node* root, int key, int currentDepth, int currentRank) {
-    if (root == nullptr) {
+pair<int, int> rankAndDepth(NodePointer currentNode, int key, int currentDepth, int currentRank) {
+    if (currentNode == nullptr) {
         return { 0, 0 };
     }
 
-    int leftSubtreeSize = root->left->subtreeSize;
-    if (key == root->key) {
+    int leftSubtreeSize = currentNode->left->subtreeSize;
+    if (key == currentNode->key) {
         return { currentRank + leftSubtreeSize + 1, currentDepth };
     }
-    else if (key < root->key) {
-        return rankAndDepth(root->left, key, currentDepth + 1, currentRank);
+    else if (key < currentNode->key) {
+        return rankAndDepth(currentNode->left, key, currentDepth + 1, currentRank);
     }
-    else {//key > root->key
-        return rankAndDepth(root->right, key, currentDepth + 1, currentRank + leftSubtreeSize + 1);
+    else {//key > currentNode->key
+        return rankAndDepth(currentNode->right, key, currentDepth + 1, currentRank + leftSubtreeSize + 1);
     }
 }
