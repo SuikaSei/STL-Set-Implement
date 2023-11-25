@@ -29,7 +29,7 @@ Created by 장태양on 11/19/23.
 
 using namespace std;
 
-NOdePointer AVLTree::find(int key) {
+NodePointer AVLTree::find(int key) {
 	int depth = 0;
 	NodePointer current_node = root;
 
@@ -48,7 +48,27 @@ NOdePointer AVLTree::find(int key) {
 		}
 	}
 
-	cout << "0\n";
+	cout << 0 << "\n";
 	return nullptr; //current_node == nullptr;
 }
 
+NodePointer AVLTree::findWithoutPrint(int key) {
+	int depth = 0;
+	NodePointer current_node = root;
+
+	while (current_node != nullptr) {
+		if (current_node->key == key) {
+			return current_node;
+		}
+		else if (current_node->key > key) {
+			depth += 1;
+			current_node = current_node->left;
+		}
+		else { //current_node.key < key
+			depth += 1;
+			current_node = current_node->right;
+		}
+	}
+
+	return nullptr; //current_node == nullptr;
+}

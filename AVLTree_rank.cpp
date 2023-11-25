@@ -29,17 +29,29 @@ Created by 장태양 on 11/23/23.
 
 using namespace std;
 
-int AVLTree::rank(int key) {
-	int rank = 0;
-	NodePointer finding_node = find(key);
+void AVLTree::rank(int key) {
+    if (findWithoutPrint(key) == nullptr) {
+        cout << 0 << '\n';
+        return;
+    }
 
-	if (key <= root->key) {
-		rank = finding_node->left->subtreeSize + 1;
-	}
-	else { // key > root->key
-		rank = root->subtreeSize - finding_node->right->subtreeSize;
-	}
+    pair<int, int> result = rank(root, key, 0, 0);
+    cout << result.second << " " << result.first << '\n';
+}
 
-	cout << rank << "\n";
-	return rank;
+pair<int, int> rankAndDepth(Node* root, int key, int currentDepth, int currentRank) {
+    if (root == nullptr) {
+        return { 0, 0 };
+    }
+
+    int leftSubtreeSize = root->left->subtreeSize;
+    if (key == root->key) {
+        return { currentRank + leftSubtreeSize + 1, currentDepth };
+    }
+    else if (key < root->key) {
+        return rankAndDepth(root->left, key, currentDepth + 1, currentRank);
+    }
+    else {//key > root->key
+        return rankAndDepth(root->right, key, currentDepth + 1, currentRank + leftSubtreeSize + 1);
+    }
 }
