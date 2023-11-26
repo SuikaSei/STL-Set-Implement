@@ -1,4 +1,4 @@
-/*
+﻿/*
 MIT License
 
 Copyright (c) 2023 Inha-Open-Source-Team-BBBig
@@ -21,45 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Created by 손예원, 박준영, 장태양, 주시현 on 11/16/23.
+Created by 손예원 on 11/20/23.
  */
+#include <iostream>
+#include "AVLTree.h"
 
-#ifndef STL_SET_IMPLEMENT_AVLTREE_H
-#define STL_SET_IMPLEMENT_AVLTREE_H
-
-struct Node {
-    int key, height;
-    node *left, right;
-};
-
-typedef Node *NodePointer;
-
-class AVLTree {
-private:
-    NodePointer root;
-    int sizeOfTree;
-
-public:
-    AVLTree() {
-        root = nullptr;
-        sizeOfTree = 0;
-    };
-
-    int minimum();
-
-    int maximum();
-
-    void empty();
-
-    void size();
-
-    NodePointer find(int key);
-
-    int insert();
-
-    int rank();
-
-    int erase()
-};
-
-#endif //STL_SET_IMPLEMENT_AVLTREE_H
+void AVLTree::empty() {
+    if (sizeOfTree == 0) {
+        cout << 1 << '\n';
+    }
+    else {
+        cout << 0 << '\n';
+    }
+}
